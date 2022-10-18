@@ -1,0 +1,46 @@
+.tasksContainer {
+  margin-top: 10%;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 40px;
+  padding-top: 10px;
+  background-color: white;
+  border-top: 10px solid rgb(14, 157, 112);
+  border-right: 4px solid rgb(14, 157, 112);
+  color: black;
+}
+.tasksContainer h2 {
+  font-size: 29px;
+  border-bottom: 3px solid rgb(14, 157, 112);
+  border-radius: 20%;
+}
+.task {
+  border: 2px solid rgb(37, 174, 187);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
+}
+.taskDone {
+  color: green;
+  border-color: green;
+}
+.taskLocked {
+  color: grey;
+  border-color: grey;
+  display: flex;
+  justify-content: center;
+}
+.taskLocked p {
+  display: none;
+}
+.taskIcon {
+  align-self: center;
+  max-width: 2rem;
+  float: left;
+  margin-right: 10px;
+  justify-content: center;
+  align-content: center;
+}
