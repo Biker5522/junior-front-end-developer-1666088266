@@ -1,44 +1,41 @@
 .tasksContainer {
-  margin-top: 10%;
-  border: 2px solid black;
+  margin-top: 3%;
   border-radius: 20px;
-  padding: 40px;
   padding-top: 10px;
   background-color: white;
-  border-top: 10px solid rgb(14, 157, 112);
-  border-right: 4px solid rgb(14, 157, 112);
+  padding-bottom: 15px;
   color: black;
+  grid-area: 1 / 1 / 2 / 2;
 }
 .tasksContainer h2 {
-  font-size: 29px;
-  border-bottom: 3px solid rgb(14, 157, 112);
+  font-size: 13px;
   border-radius: 20%;
+  margin-left: 22px;
+  margin-bottom: 25px;
+}
+.yourTasksIcon {
+  max-width: 20px;
+  float: right;
+  margin-right: 20px;
 }
 .task {
-  border: 2px solid rgb(37, 174, 187);
-  border-radius: 10px;
-  margin: 10px;
-  padding: 8px;
-  font-size: 17px;
+  border-radius: 5px;
+  margin: 2px 17px 0px 12px;
+  padding-left: 10px;
+  font-size: 12px;
   font-weight: bold;
   display: flex;
 }
-.taskDone {
-  color: green;
-  border-color: green;
+.task p {
+  margin: 6px;
 }
-.taskLocked {
-  color: grey;
-  border-color: grey;
-  display: flex;
-  justify-content: center;
+.task:hover {
+  background-color: rgba(45, 141, 210, 0.441);
 }
-.taskLocked p {
-  display: none;
-}
+
 .taskIcon {
   align-self: center;
-  max-width: 2rem;
+  max-width: 10px;
   float: left;
   margin-right: 10px;
   justify-content: center;

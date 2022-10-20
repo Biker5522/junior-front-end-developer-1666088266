@@ -1,10 +1,5 @@
 .App {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
+  padding: 15px;
 }
 .App-link {
   color: #61dafb;
