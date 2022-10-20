@@ -1,0 +1,46 @@
+.businessContext {
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: white;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding-top: 14px;
+}
+.businessContext h2 {
+  font-size: 13px;
+  margin-left: 22px;
+  margin-bottom: 25px;
+  color: blue;
+}
+.businessMain {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  border-radius: 20%;
+}
+.businessTasks {
+  background-color: rgb(244, 244, 244);
+  margin-left: 5px;
+}
+.businessTask {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5%;
+  margin: 10px;
+  padding: 10px;
+}
+.newTask {
+  background-color: blue;
+  float: left;
+  border-radius: 20%;
+  color: white;
+  font-weight: bold;
+  padding: 2px;
+  margin-right: 5px;
+}
+.unactive {
+  background-color: rgb(244, 244, 244);
+}
+.active {
+  box-shadow: 3px 1px 1px 3px rgba(188, 188, 188, 0.277);
+}
