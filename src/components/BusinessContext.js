@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import moment from 'moment'
 import { Context } from './Context'
 export default function BusinessContext() {
+  const [activeBusinessTask, setActiveBusinessTask] = useState(null)
   const [context, setContext] = useContext(Context)
   const [businessTasks, setBusinessTasks] = useState([
     {
@@ -22,8 +23,8 @@ export default function BusinessContext() {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       isNew: false,
       author: 'Olga Nelson',
-      created_at: Date.now(),
-      active: true,
+      created_at: '2022-04-23T18:25:43.511Z',
+      active: false,
       taskId: 1,
     },
     {
@@ -56,7 +57,7 @@ export default function BusinessContext() {
       isNew: false,
       author: 'Olga Nelson',
       created_at: Date.now(),
-      active: true,
+      active: false,
       taskId: 2,
     },
     {
@@ -67,36 +68,64 @@ export default function BusinessContext() {
       isNew: false,
       author: 'Olga Nelson',
       created_at: Date.now(),
-      active: true,
+      active: false,
       taskId: 3,
     },
   ])
+  //Clear Active Business Task after changing task
+  useEffect(() => {
+    setActiveBusinessTask(null)
+  }, [context])
+
+  //OnClick set Active Task
+  const HandleClick = (task) => (e) => {
+    e.preventDefault()
+    if (task.isNew) {
+      task.isNew = false
+    }
+    businessTasks.forEach((x) => {
+      x.active = false
+    })
+    task.active = true
+    setActiveBusinessTask(task)
+  }
+
   return (
     <div className="businessContext">
-      {console.log(context.id)}
       <div className="headerMain">
         <h2>BUSINESS CONTEXT</h2>
       </div>
       <div className="businessMain">
         <div className="businessTasks">
+          {/* Display business Tasks */}
           {businessTasks
             .filter((e) => e.taskId == context.id)
             .map((task, index) => {
+              // New task
               if (task.isNew === true) {
                 return (
-                  <div key={index} className="businessTask">
+                  <div
+                    key={index}
+                    className="businessTask"
+                    onClick={HandleClick(task)}
+                  >
                     <div>
                       <div className="newTask">New</div>
                       <p className="name">{task.author}</p>
                     </div>
-                    <h3>{task.title}</h3>
+                    <h3 className="newTaskTitle">{task.title}</h3>
                     <p>{task.body.substring(0, 60)}...</p>
                   </div>
                 )
               } else if (task.isNew === false) {
+                //Active Task
                 if (task.active === true) {
                   return (
-                    <div key={index} className="businessTask active">
+                    <div
+                      key={index}
+                      className="businessTask active"
+                      onClick={HandleClick(task)}
+                    >
                       <p className="name">{task.author}</p>
                       <h3>{task.title}</h3>
                       <p>{task.body.substring(0, 60)}...</p>
@@ -104,26 +133,42 @@ export default function BusinessContext() {
                   )
                 } else {
                   return (
-                    <div key={index} className="businessTask unactive">
+                    <div
+                      key={index}
+                      className="businessTask unactive "
+                      onClick={HandleClick(task)}
+                    >
                       <p className="name">{task.author}</p>
                       <h3>{task.title}</h3>
                       <p>{task.body.substring(0, 60)}...</p>
                     </div>
                   )
                 }
-              } else return null
+              }
             })}
         </div>
-        <div className="businessBody">
-          <h3>{businessTasks[1].title}</h3>
-          <h4>
-            {businessTasks[1].author}
-            {moment(businessTasks[1].date).format(' Do MMMM')}
-            {'  '}
-            {moment(businessTasks[1].date).format('h:mm')}
-          </h4>
-          <p>{businessTasks[1].body}</p>
-        </div>
+        {/* Display information about a business task */}
+        {activeBusinessTask != null && (
+          <div className="businessBody">
+            <h3>{activeBusinessTask.title}</h3>
+            <div className="table">
+              <div className="image">
+                <img src="https://media-exp1.licdn.com/dms/image/D4D35AQFC7wQJSDsnQw/profile-framedphoto-shrink_200_200/0/1665603729815?e=1666918800&v=beta&t=rXuaZ2nqFbaZdDdIDyKh49Fx6R8O0cR0y9LzwDVoRPw"></img>
+              </div>
+              <div className="description">
+                <h4>
+                  {activeBusinessTask.author}
+                  {moment(activeBusinessTask.created_at).format(' Do ') ==
+                    moment().format(' Do ') && <span> Today</span>}
+                  {moment(activeBusinessTask.created_at).format(' Do MMMM')}
+                  {'  '}
+                  {moment(activeBusinessTask.created_at).format('h:mm')}
+                </h4>
+                <p>{activeBusinessTask.body}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

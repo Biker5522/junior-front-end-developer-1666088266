@@ -1,0 +1,15 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 97%;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 20px 15px 4px 10px;
+}
+.footer .right {
+  float: right;
+}
+.footer .left {
+  float: left;
+}

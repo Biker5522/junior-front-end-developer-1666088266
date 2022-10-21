@@ -12,7 +12,7 @@ export default function TasksList() {
       id: 1,
       title: 'Hay, Hello',
       status: 'done',
-      active: true,
+      active: false,
     },
     {
       id: 2,
@@ -40,17 +40,16 @@ export default function TasksList() {
     },
   ])
 
+  //OnClick set active tasks
   const HandleClick = (task) => (e) => {
     e.preventDefault()
     if (task.active == false && task.status != 'locked') {
       tasks.forEach((x) => {
         x.active = false
-        console.log(x.active)
       })
       task.active = true
       setContext(task)
     }
-    console.log(task.active)
   }
 
   return (
@@ -59,7 +58,9 @@ export default function TasksList() {
         <img className="yourTasksIcon" src={ArrowDown} alt="locked" />
         <h2>YOUR TASKS</h2>
       </div>
+      {/* Display Tasks */}
       {tasks.map((task, index) => {
+        // Done Tasks
         if (task.status === 'done') {
           return (
             <div
@@ -71,6 +72,7 @@ export default function TasksList() {
               <p>{task.title}</p>
             </div>
           )
+          // Tasks in progress
         } else if (task.status === 'inProgress') {
           return (
             <div
@@ -82,6 +84,7 @@ export default function TasksList() {
               <p>{task.title}</p>
             </div>
           )
+          //Locked Tasks
         } else if (task.status === 'locked') {
           return (
             <div key={index} className="task taskLocked">
