@@ -1,14 +1,14 @@
 .tasksContainer {
-  margin-top: 3%;
   border-radius: 20px;
   padding-top: 10px;
   background-color: white;
   padding-bottom: 15px;
   color: black;
   grid-area: 1 / 1 / 2 / 2;
+  height: auto;
 }
 .tasksContainer h2 {
-  font-size: 13px;
+  font-size: 15px;
   border-radius: 20%;
   margin-left: 22px;
   margin-bottom: 25px;
@@ -22,7 +22,7 @@
   border-radius: 5px;
   margin: 2px 17px 0px 12px;
   padding-left: 10px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   display: flex;
 }

@@ -1,7 +1,6 @@
 .businessContext {
   grid-area: 1 / 2 / 2 / 3;
   background-color: white;
-  margin-top: 10px;
   border-radius: 20px;
   padding-top: 14px;
 }
@@ -18,10 +17,13 @@
   grid-column-gap: 10px;
   grid-row-gap: 0px;
   border-radius: 20%;
+  padding-bottom: 15px;
 }
 .businessTasks {
   background-color: rgb(244, 244, 244);
   margin-left: 5px;
+  min-height: 45rem;
+  border-radius: 00% 0% 0% 3%;
 }
 .businessTask {
   background-color: rgb(255, 255, 255);
@@ -37,10 +39,51 @@
   font-weight: bold;
   padding: 2px;
   margin-right: 5px;
+  color: rgb(255, 255, 255);
 }
+
 .unactive {
   background-color: rgb(244, 244, 244);
 }
 .active {
   box-shadow: 3px 1px 1px 3px rgba(188, 188, 188, 0.277);
+}
+h3 {
+  font-size: 21px;
+  font-weight: bold;
+}
+.newTaskTitle {
+  color: blue;
+}
+.businessBody {
+  margin: 10px 30px;
+}
+.businessBody img {
+  max-width: 60px;
+  height: auto;
+  float: left;
+  border-radius: 50%;
+}
+.businessBody p {
+  margin-left: 10px;
+}
+.table {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+}
+.image {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.description {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.description h4 {
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+.description p {
+  margin-top: 5px;
 }
