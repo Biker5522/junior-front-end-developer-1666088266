@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import moment from 'moment'
+import Face from '../icons/face.png'
 import { Context } from './Context'
 export default function BusinessContext() {
   const [activeBusinessTask, setActiveBusinessTask] = useState(null)
@@ -10,7 +11,7 @@ export default function BusinessContext() {
       title: 'New Sprint, tasks and intro information',
       body:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
-      isNew: true,
+      isNew: false,
       author: 'Olga Nelson',
       created_at: Date.now(),
       active: false,
@@ -153,7 +154,7 @@ export default function BusinessContext() {
             <h3>{activeBusinessTask.title}</h3>
             <div className="table">
               <div className="image">
-                <img src="https://media-exp1.licdn.com/dms/image/D4D35AQFC7wQJSDsnQw/profile-framedphoto-shrink_200_200/0/1665603729815?e=1666918800&v=beta&t=rXuaZ2nqFbaZdDdIDyKh49Fx6R8O0cR0y9LzwDVoRPw"></img>
+                <img src={Face} />
               </div>
               <div className="description">
                 <h4>

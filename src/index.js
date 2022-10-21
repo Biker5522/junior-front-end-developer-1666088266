@@ -2,9 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/index.css'
 import './styles/footer.css'
-import './styles/tasks.css'
+import './styles/Tasks.css'
 import './styles/main.css'
 import './styles/businessContext.css'
+
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
